@@ -152,7 +152,6 @@ function addCard() {
 function resetCards() {
     localStorage.removeItem('cards');
 
-
     // Обновляем оба слайдера
     renderCards('slider1', []);
     renderCards('slider2', []);
@@ -162,11 +161,9 @@ function resetCards() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeCards(); // Добавляем 10 карточек, если их нет
     const cards = JSON.parse(localStorage.getItem('cards')) || [];
-
+    resetCards()
     // Отрисовываем карточки в обоих слайдерах
     renderCards('slider1', cards);
     renderCards('slider2', cards);
+
 });
-
-
-resetCards();
